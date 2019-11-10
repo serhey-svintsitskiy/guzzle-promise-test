@@ -7,7 +7,7 @@ use GuzzleHttp\Promise\Promise;
 use function \GuzzleHttp\Promise\promise_for;
 use function GuzzleHttp\Promise\rejection_for;
 
-class Test1
+class Test2
 {
     public function __invoke()
     {
@@ -17,7 +17,7 @@ class Test1
             $log[] = 'then() #1: fullfilled';
             return rejection_for($reason);
         }, function ($reason) use (&$log) {
-            $log[] = 'then() #1: rejected';
+            $log[] = 'then() #1: ejected';
             //throw new Exception($reason);
             return promise_for($reason);
         })->then(function ($reason) use (&$log) {
@@ -35,8 +35,8 @@ class Test1
         });
 
         try {
-            $promise->resolve('Error!');
-            $result = $promise->wait();
+            $promise->reject('Error!');
+            $result = $promise->wait(false);
             $r2 = $p2->wait();
             print_r($r2);
             print_r("\n");
