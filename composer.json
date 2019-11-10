@@ -1,0 +1,40 @@
+{
+    "name": "serhey-svintsitskiy/guzzle-promise-test",
+    "type": "library",
+    "description": "Guzzle is a PHP HTTP client library",
+    "keywords": [
+        "framework",
+        "http",
+        "rest",
+        "web service",
+        "curl",
+        "client",
+        "HTTP client"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Serhii Svintsitskyi",
+            "email": "sergeys08.sv@gmail.com",
+            "homepage": "https://github.com/serhey-svintsitskiy"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "guzzlehttp/promises": "^1.0",
+        "guzzlehttp/psr7": "^1.6.1"
+    },
+    "require-dev": {
+        "ext-curl": "*",
+        "phpunit/phpunit": "^7.0",
+        "psr/log": "^1.1"
+    },
+    "autoload": {
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GuzzlePromiseTest\\": "test/GuzzlePromiseTest"
+        }
+    }
+}
